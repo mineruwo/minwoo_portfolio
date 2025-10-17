@@ -1,12 +1,12 @@
-ㅅ<template>
+<template>
   <div class="content-container">
-    <h2>✉️ 컨텍트</h2>
-    <p>이곳에 연락 정보를 작성합니다.</p>
-    <!-- Add your contact information here -->
+    <h2>✉️ 연락처 및 링크</h2>
+    <p>잘 부탁드립니다.</p>
     <ul>
-      <li><strong>Email:</strong> your.email@example.com</li>
-      <li><strong>GitHub:</strong> <a href="https://github.com/your-github" target="_blank" rel="noopener noreferrer">github.com/your-github</a></li>
-      <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/your-linkedin" target="_blank" rel="noopener noreferrer">linkedin.com/in/your-linkedin</a></li>
+      <li><strong>Phone:</strong> 010-4950-3013</li>
+      <li><strong>Email:</strong> mineruwo@gmail.com</li>
+      <li><strong>GitHub:</strong> <a href="https://github.com/mineruwo" target="_blank" rel="noopener noreferrer">github.com/mineruwo</a></li>
+
     </ul>
   </div>
 </template>

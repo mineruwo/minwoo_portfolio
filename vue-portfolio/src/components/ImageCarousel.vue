@@ -150,7 +150,7 @@ watch(() => props.interval, startAutoSlide);
 
 .carousel-indicators {
   position: absolute;
-  bottom: 10px;
+  bottom: 50px; /* Adjusted to be above the banner text */
   left: 50%;
   transform: translateX(-50%);
   display: flex;
