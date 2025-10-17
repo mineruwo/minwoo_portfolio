@@ -1,6 +1,6 @@
 <template>
   <div class="content-container">
-    <h2>📝 경력 사항 (Work Experience)</h2>
+    <h2>경력 사항 (Work Experience)</h2>
     <div class="career-card">
       <h3>㈜ 미러로이드 (2022.10 ~ 2025.01)</h3>
       <p><strong>프로그램 개발 및 유지보수</strong></p>

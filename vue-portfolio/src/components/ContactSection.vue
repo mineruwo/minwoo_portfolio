@@ -1,6 +1,6 @@
 <template>
   <div class="content-container">
-    <h2>✉️ 연락처 및 링크</h2>
+    <h2>연락처 및 링크</h2>
     <p>잘 부탁드립니다.</p>
     <ul>
       <li><strong>Phone:</strong> 010-4950-3013</li>
@@ -12,7 +12,6 @@
 </template>
 
 <script setup>
-// No script needed for now
 </script>
 
 <style scoped>

@@ -108,7 +108,7 @@ const growthLearning = [
     <p>학원에서는 프로젝트 팀장으로서 팀원들의 코드 리뷰를 통해 코드 리딩 능력을 크게 향상시켰습니다. 또한, 일정 및 기능 분배와 조율을 통해 프로젝트를 성공적으로 이끌며 협업과 리더십의 중요성을 깊이 이해하는 계기가 되었습니다.</p>
     <p>저는 ‘주어진 일정 안에 안정적인 기능을 제공하는 것’이 진정한 프로 개발자의 핵심이라고 믿습니다. 이 원칙은 개발을 시작한 이후 스스로의 기준이자, 개발자로서 자부심의 원천이 되었습니다. 이러한 경험과 가치관을 바탕으로, 자사 프로젝트들이 안정적인 사용자 경험을 제공할 수 있도록 성능과 품질 개선에 기여하고 싶습니다. 앞으로도 개발자로서 꾸준히 성장하며, 팀과 함께 시너지를 내고 서비스 품질을 높이는 개발자가 되겠습니다.</p>
     <hr>
-    <h3>🛠️ 기술 스택</h3>
+    <h3>기술 스택</h3>
     <div class="skill-categories">
       <div v-for="category in skillCategories" :key="category.name" class="skill-category-card">
         <h4>{{ category.name }}</h4>
@@ -120,7 +120,7 @@ const growthLearning = [
       </div>
     </div>
     <hr>
-    <h3>🌱 소프트 스킬</h3>
+    <h3>소프트 스킬</h3>
     <div class="soft-skills-container">
       <div v-for="skill in softSkills" :key="skill.name" class="soft-skill-card">
         <div class="skill-name">{{ skill.name }}</div>
@@ -128,7 +128,7 @@ const growthLearning = [
       </div>
     </div>
     <hr>
-    <h3>💡 성장 및 학습</h3>
+    <h3>성장 및 학습</h3>
     <div class="growth-learning-container">
       <div v-for="item in growthLearning" :key="item.name" class="growth-learning-card">
         <div class="item-name">{{ item.name }}</div>

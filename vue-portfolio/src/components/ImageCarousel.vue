@@ -2,8 +2,8 @@
   <div class="image-carousel">
     <div class="carousel-images">
       <img :src="images[currentIndex]" :alt="`Project Image ${currentIndex + 1}`" class="carousel-image" />
-      <div v-if="bannerText" class="carousel-banner" :style="{ color: bannerTextColor }">
-        {{ bannerText }}
+      <div v-if="currentBannerText" class="carousel-banner" :style="{ color: bannerTextColor }">
+        {{ currentBannerText }}
       </div>
     </div>
 
@@ -22,7 +22,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted, watch } from 'vue';
+import { ref, onMounted, onUnmounted, watch, computed } from 'vue';
 
 const props = defineProps({
   images: {
@@ -31,20 +31,27 @@ const props = defineProps({
   },
   interval: {
     type: Number,
-    default: 3000, // 3 seconds
+    default: 5000, 
   },
   bannerText: {
-    type: String,
-    default: '',
+    type: [String, Array],
+    default: () => [],
   },
   bannerTextColor: {
     type: String,
-    default: '#ffffff', // Default white color
+    default: '#ffffff',
   },
 });
 
 const currentIndex = ref(0);
 let autoSlideInterval = null;
+
+const currentBannerText = computed(() => {
+  if (Array.isArray(props.bannerText)) {
+    return props.bannerText[currentIndex.value] || '';
+  }
+  return props.bannerText;
+});
 
 const startAutoSlide = () => {
   if (autoSlideInterval) {
@@ -65,7 +72,7 @@ const prevImage = () => {
 
 const goToImage = (index) => {
   currentIndex.value = index;
-  startAutoSlide(); // Reset auto-slide when manually navigating
+  startAutoSlide(); 
 };
 
 onMounted(() => {
@@ -78,7 +85,6 @@ onUnmounted(() => {
   }
 });
 
-// Restart auto-slide if images or interval prop changes
 watch(() => props.images, startAutoSlide);
 watch(() => props.interval, startAutoSlide);
 </script>
@@ -87,7 +93,7 @@ watch(() => props.interval, startAutoSlide);
 .image-carousel {
   position: relative;
   width: 100%;
-  max-width: 600px; /* Adjust as needed */
+  max-width: 600px; 
   margin: 0 auto 1.5rem auto;
   overflow: hidden;
   border-radius: 8px;
@@ -97,7 +103,7 @@ watch(() => props.interval, startAutoSlide);
 .carousel-images {
   display: flex;
   width: 100%;
-  height: 350px; /* Fixed height for carousel */
+  height: 350px; 
   position: relative;
 }
 
@@ -114,7 +120,7 @@ watch(() => props.interval, startAutoSlide);
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  background-color: rgba(0, 0, 0, 0.5); 
   padding: 0.5rem 1rem;
   font-size: 1.1rem;
   font-weight: bold;
@@ -125,7 +131,7 @@ watch(() => props.interval, startAutoSlide);
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.6); /* Darker background for arrows */
+  background-color: rgba(0, 0, 0, 0.6); 
   color: white;
   border: none;
   padding: 10px 15px;
@@ -150,7 +156,7 @@ watch(() => props.interval, startAutoSlide);
 
 .carousel-indicators {
   position: absolute;
-  bottom: 50px; /* Adjusted to be above the banner text */
+  bottom: 50px; 
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -163,7 +169,7 @@ watch(() => props.interval, startAutoSlide);
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.5); /* Light indicators */
+  background-color: rgba(255, 255, 255, 0.5); 
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
